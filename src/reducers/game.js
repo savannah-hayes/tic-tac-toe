@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { calculateWinner } from "utils/calculateWinner";
+
 const newGame = {
   squares: [
     null, null, null,
@@ -27,9 +29,12 @@ export const game = createSlice({
         state.player = "x"
       }
 
+      if (!state.winner) {
+        state.winner = calculateWinner(state.squares)
+      }
     },
     restart: () => {
       return newGame
     }
   }
-})
+});

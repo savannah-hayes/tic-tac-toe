@@ -1,23 +1,21 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { game } from "reducers/game"
+import { game } from "reducers/game";
+import { Player } from "components/Player";
 
-import { SquareButton } from "styles"
-import { Player } from "./Player";
+import { SquareButton } from "styles";
 
 export const Grid = ({ square, index }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(game.actions.captureSquare({ index }))
-  }
+  };
 
   return (
-    <SquareButton
-      box={square === null ? 'square clickable' : 'square'}
-      onClick={handleClick}>
+    <SquareButton type="button" onClick={handleClick}>
       <Player square={square} />
     </SquareButton>
   )
-}
+};
