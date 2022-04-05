@@ -14,11 +14,18 @@ export const GameContainer = styled.main`
 `
 
 export const SquareButton = styled.button`
-  padding-bottom: 100%;
+  width: 150px;
+  height: 150px;
   background: #ccc;
   display: block;
   appearance: none;
   cursor: pointer;
   position: relative;
 `
+
+export const Icons = styled.img`
+  width: 100px;
+  height: 100px;
+`
+
 
